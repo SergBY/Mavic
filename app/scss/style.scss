@@ -206,48 +206,54 @@
             margin-left: 40px;
             transform: translateY(15px);
         }
-        &:nth-child(4n+3){
+
+        &:nth-child(4n+3) {
             transform: translateX(30px);
         }
-        &:nth-child(4n){
+
+        &:nth-child(4n) {
             transform: translate(50px, 15px)
         }
-    }
 
-    &__item-1,
-    &__item-3{
-        position: relative;
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            background-repeat: no-repeat;
-            background-position: 0 0;
+        &:first-child,
+        &:nth-child(4n+3) {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
         }
-    }
-    &__item-1 {
-        &::before{
-            height: 45px;
-            width: 245px;
-            background-image: url('../images/line-1.svg');
-            right: -60px;
-            top: 30px;
+
+        &:first-child {
+            &::before {
+                height: 45px;
+                width: 245px;
+                background-image: url('../images/line-1.svg');
+                right: -60px;
+                top: 30px;
+            }
         }
-    }
-    &__item-3{
-        &::before{
-            background-image: url('../images/line-3.svg');
-            width: 254px;
-            height: 40px;
-            top: 25px;
-            right: -75px;
-        }
-        &::after{
-            background-image: url('../images/line-2.svg');
-            width: 463px;
-            height: 62px;
-            top: -75px;
-            right: -25px;
+
+        &:nth-child(4n+3) {
+            &::before {
+                background-image: url('../images/line-3.svg');
+                width: 254px;
+                height: 43px;
+                top: 25px;
+                right: -75px;
+            }
+
+            &::after {
+                background-image: url('../images/line-2.svg');
+                width: 463px;
+                height: 62px;
+                top: -75px;
+                right: -25px;
+            }
         }
     }
 
@@ -290,6 +296,78 @@
     &__info-text {
         font-size: 15px;
         line-height: 18px;
+    }
+}
+
+.specification {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {}
+
+    &__box {
+        width: 280px;
+        position: relative;
+        margin-top: 10px;
+        &::before{
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+        }
+    }
+
+    &__box-2{
+        margin-top: 140px;
+    }
+
+    &__box-4{
+        margin-top: 160px;
+    }
+    &__box-1::before{
+        background-image: url('../images/pointer-1.svg');
+        width: 229px;
+        height: 114px;
+        right: -140px;
+        top: 16px;
+    }
+    &__box-2::before{
+        background-image: url('../images/pointer-2.svg');
+        width: 346px;
+        height: 81px;
+        right: -320px;
+        top: -60px;
+    }
+    &__box-3::before{
+        background-image: url('../images/pointer-3.svg');
+        width: 258px;
+        height: 103px;
+        left: -280px;
+        top: 20px;
+    }
+    &__box-4::before{
+        background-image: url('../images/pointer-4.svg');
+        width: 124px;
+        height: 89px;
+        left: -135px;
+        top: -75px;
+    }
+
+    &__box-title {
+        @extend %ubuntu-bold;
+        font-size: 21px;
+        line-height: 28px;
+        margin-bottom: 10px;
+    }
+
+    &__box-text {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 19.5px;
     }
 }
 
