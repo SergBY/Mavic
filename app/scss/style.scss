@@ -52,6 +52,10 @@
         &+.menu__list-item {
             padding-left: 20px;
         }
+        &.active{
+            color: rgb(145, 145, 145);
+            text-decoration: underline;
+        }
     }
     &__list-phone{
         display: none;
