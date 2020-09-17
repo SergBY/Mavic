@@ -3,6 +3,11 @@
     font-style: 16px;
     line-height: 22px;
   }
+  .header {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 20px 0;
+    top: 0;
+  }
   .top__title {
     font-size: 75px;
     line-height: 90px;
@@ -14,27 +19,54 @@
   .top__text {
     margin: 15px 0 25px;
   }
-  .title{
+  .title {
     padding-top: 70px;
   }
-  .products__slider-box{
+  .products__slider-box {
     padding-top: 10px;
   }
-  .products__slider-text{
+  .products__slider-text {
     bottom: auto;
     left: auto;
     right: 0;
-    top: -100px;  
+    top: -100px;
+  }
+  .benefits {
+    .title {
+      margin-bottom: 15px;
+    }
+  }
+  .benefits__item {
+    margin-bottom: 55px;
+  }
+  .benefits__item:nth-child(4n + 3)::after {
+    width: 490px;
+    top: -66px;
+  }
+  .benefits__item:nth-child(4n),
+  .benefits__item:nth-child(3n) {
+    margin-bottom: 20px;
   }
 }
 
+@media (max-width: 1280px) {
+  .benefits__item {
+    width: 45%;
+    &:first-child::before {
+      width: 38%;
+      right: -55px;
+    }
+    &:nth-child(3)::before {
+      width: 40%;
+    }
+    &:nth-child(3)::after {
+      width: 80%;
+      top: -50px;
+    }
+  }
+}
 
 @media (max-width: 1100px) {
-  .header{
-    background: rgba(0, 0, 0, .65);
-    padding: 20px 0;
-    top: 0;
-  }
   .menu {
     order: 1;
   }
@@ -44,7 +76,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(#1C1C1C, .9);
+    background: rgba(#1c1c1c, 0.9);
     z-index: -1;
     display: flex;
     flex-direction: column;
@@ -52,40 +84,40 @@
     padding-left: 24px;
     justify-content: space-around;
     transform: translateY(-1000%);
-    transition: transform .5s;
+    transition: transform 0.5s;
     overflow: auto;
-    &--active{
+    &--active {
       transform: translateY(0);
     }
   }
-  .menu__list-item+.menu__list-item{
+  .menu__list-item + .menu__list-item {
     padding: 0;
   }
-  .menu__list-item{
+  .menu__list-item {
     margin-bottom: 35px;
-    &:first-child{
+    &:first-child {
       margin-top: auto;
     }
   }
   .menu__list-phone,
-  .menu__list-link{
+  .menu__list-link {
     display: block;
   }
-  .menu__list-phone{
+  .menu__list-phone {
     padding-top: 33px;
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
-    &::before{
-      content:'';
+    &::before {
+      content: "";
       position: absolute;
-      border-top: 1px solid rgba(#fff, .24);
+      border-top: 1px solid rgba(#fff, 0.24);
       top: 0;
       right: 0;
       left: -24px;
     }
   }
-  .header__phone-menu{
+  .header__phone-menu {
     font-weight: 500;
     font-size: 16px;
     line-height: 18px;
@@ -107,7 +139,7 @@
     height: 2px;
     background-color: #e0e0e0;
     margin-bottom: 4px;
-    transition: transform .3s;
+    transition: transform 0.3s;
   }
   .menu__btn::after {
     margin-bottom: 0;
@@ -121,19 +153,18 @@
     height: 2px;
     margin-bottom: 4px;
     opacity: 1;
-    transition: 1.0s;
+    transition: 1s;
   }
   .menu__btn.menu__btn--active {
-    .menu_btn-line{
+    .menu_btn-line {
       opacity: 0;
       transition: 0.2s;
     }
-    &::after{
+    &::after {
       width: 24px;
       transform: translateY(-6px) rotate(-135deg);
     }
-    &::before{
-
+    &::before {
       transform: translateY(6px) rotate(135deg);
     }
   }
@@ -143,46 +174,119 @@
   .header__btn {
     margin-right: 0;
   }
-  .products__text{
+  .products__text {
     padding-right: 15px;
   }
-  .products__slider-box{
+  .products__slider-box {
     padding-right: 20px;
+  }
+  .benefits__item {
+    width: 80%;
+    margin-bottom: 40px;
+
+    &:first-child::before {
+      display: none;
+    }
+    &:nth-child(3)::before {
+      display: none;
+    }
+    &:nth-child(3)::after {
+      display: none;
+    }
+    &:nth-child(even) {
+      margin-left: 200px;
+      transform: translateY(0);
+    }
+    &:nth-child(3) {
+      margin-left: 0px;
+      transform: translateY(0);
+    }
+  }
+  .benefits__item:nth-child(4n),
+  .benefits__item:nth-child(3n) {
+    margin-bottom: 40px;
+  }
+  .benefits__items {
+    display: block;
+  }
+  .benefits__info{
+    width: 40%;
   }
 }
 
-@media (max-width: 1024px){
-  .title{
+@media (max-width: 1024px) {
+  .title {
     padding-top: 50px;
     font-size: 36px;
     line-height: 42px;
     margin-bottom: 35px;
   }
-  .products__slider-text{
+  .products__slider-text {
     font-size: 22px;
     line-height: 24px;
     top: -85px;
   }
 }
 
-@media (max-width: 940px){
-  .products__inner{
+@media (max-width: 940px) {
+  .products__inner {
     display: block;
   }
-  .products__text{
+  .products__text {
     padding-right: 0;
     max-width: 100%;
     margin-bottom: 140px;
   }
-  .products__slider{
+  .products__slider {
     margin-left: auto;
   }
-  .products__slider-box{
+  .products__slider-box {
     padding-bottom: 25px;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 787px) {
+  .benefits__item {
+    width: 100%;
+    &:nth-child(even){
+      margin-left: 0;
+    }
+  }
+  .benefits__info{
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .products__inner {
+    padding-left: 0;
+  }
+  .title {
+    padding-left: 0;
+    padding-top: 40px;
+    font-size: 26px;
+    line-height: 28px;
+    margin-bottom: 15px;
+  }
+  .products__text p {
+    margin-bottom: 10px;
+  }
+  .products__text {
+    margin-bottom: 100px;
+  }
+  .products__slider {
+    max-width: 100%;
+    &::before {
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 540px) {
   .top__title {
     display: none;
   }
@@ -192,19 +296,26 @@
   .scroll__btn {
     padding: 13px 0;
   }
-  
+  .benefits__num{
+    display: none;
+  }
+  .benefits__info-text{
+    font-size: 14px;
+    
+  }
 }
-@media (max-height: 375px){
-  .menu__list-item{
+
+@media (max-height: 375px) {
+  .menu__list-item {
     margin-bottom: 25px;
   }
-  .menu__list-phone{
+  .menu__list-phone {
     padding: 10px 0;
   }
 }
 
-@media (max-height: 340px){
-  .menu__list-item{
+@media (max-height: 340px) {
+  .menu__list-item {
     margin-bottom: 20px;
   }
 }

@@ -240,7 +240,7 @@
 
         &:first-child {
             &::before {
-                height: 45px;
+                height: 48px;
                 width: 245px;
                 background-image: url('../images/line-1.svg');
                 right: -60px;
@@ -345,7 +345,7 @@
     }
     &__box-1::before{
         background-image: url('../images/pointer-1.svg');
-        width: 229px;
+        width: 227px;
         height: 114px;
         right: -140px;
         top: 14px;
@@ -360,7 +360,7 @@
     &__box-3::before{
         background-image: url('../images/pointer-3.svg');
         width: 258px;
-        height: 103px;
+        height: 105px;
         left: -280px;
         top: 15px;
     }
